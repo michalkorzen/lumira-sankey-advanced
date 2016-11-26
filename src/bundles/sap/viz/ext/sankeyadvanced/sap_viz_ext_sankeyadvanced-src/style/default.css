@@ -1,0 +1,20 @@
+/* IMPORTANT:  use unique CSS class name to avoid confliction with other extensions or applications. */
+.sap_viz_ext_sankey.node rect {
+    cursor: move;
+    fill-opacity: .9;
+    shape-rendering: crispEdges;
+}
+.sap_viz_ext_sankey.node text {
+    pointer-events: none;
+    text-shadow: 0 1px 0 #fff;
+}
+.sap_viz_ext_sankey.link {
+    fill: none;
+    stroke: #000;
+    stroke-opacity: .2;
+}
+.sap_viz_ext_sankey.link:hover {
+    /*stroke-opacity: .5;*/
+}
+
+/* For example, adding the extension id as prefix of CSS class name. */

@@ -1,0 +1,19 @@
+{
+	"metadataVersion": "1.0",
+	"id": "sap.viz.ext.sankeyadvanced",
+	"name": "Sankey advanced",
+	"description": " ",
+	"version": "1.2.0",
+	"vendor": {
+		"name": "Michal Korzen, SAP Poland",
+		"url": "Your company website"
+	},
+	"requires": [{
+		"id": "sap.viz.common.core",
+		"version": "5.6.0"
+	}],
+	"bundles": [{
+		"id": "sap.viz.ext.sankeyadvanced",
+		"version": "1.2.0"
+	}]
+}
