@@ -220,29 +220,14 @@ define("sap_viz_ext_sankeyadvanced-src/js/render", ["sap_viz_ext_sankeyadvanced-
 			// nodes with no incoming links are assigned breadth zero, while
 			// nodes with no outgoing links are assigned the maximum breadth.
 			function computeNodeBreadths() {
-				/*
-				var remainingNodes = nodes,
-					nextNodes,
-					x = 0;
-
-				while (remainingNodes.length) {
-					nextNodes = [];
-					remainingNodes.forEach(function(node) {
-						node.x = x;
-						node.dx = nodeWidth;
-						node.sourceLinks.forEach(function(link) {
-							nextNodes.push(link.target);
-						});
-					});
-					remainingNodes = nextNodes;
-					++x;
-				}*/
-
 				nodes.forEach(function(d) {
 					d.x = parseInt(d.name.substring(0, d.name.indexOf("-")));
 					d.dx = nodeWidth;
 				});
 
+				var x = d3.max(nodes, function(d) {
+					return d.x;
+				});
 				nodes.filter(function(l) {
 					return l.name === "NULLSPACE" || l.name === "CUTSPACE";
 				}).forEach(function(d) {
@@ -250,11 +235,8 @@ define("sap_viz_ext_sankeyadvanced-src/js/render", ["sap_viz_ext_sankeyadvanced-
 						return f.x;
 					}) + 1;
 				});
-				var x = d3.max(nodes, function(d) {
-					return d.x;
-				});
 
-				scaleNodeBreadths((width - nodeWidth - 20) / (x - 2));
+				scaleNodeBreadths((width - nodeWidth - 20) / (x));
 			}
 
 			function moveSourcesRight() {
@@ -328,7 +310,7 @@ define("sap_viz_ext_sankeyadvanced-src/js/render", ["sap_viz_ext_sankeyadvanced-
 					function weightedTarget(link) {
 						return center(link.target) * link.value;
 					}
-					
+
 					nodesByBreadth.slice().reverse().forEach(function(nodes) {
 						nodes.forEach(function(node) {
 							if (node.sourceLinks.length) {
@@ -441,7 +423,6 @@ define("sap_viz_ext_sankeyadvanced-src/js/render", ["sap_viz_ext_sankeyadvanced-
 				.attr('fill', 'black')
 				.style('opacity', 0.3)
 				.attr('font-size', '28px');
-			//opacity: 0.3; color: rgb(0, 0, 0); font-size: 28px;
 		}
 		//Sankey plugin ends
 		var meta = data.meta;
@@ -489,8 +470,6 @@ define("sap_viz_ext_sankeyadvanced-src/js/render", ["sap_viz_ext_sankeyadvanced-
 			"nodes": [],
 			"links": []
 		};
-
-		//console.log("######################################");
 
 		graph.nodes.push({
 			"name": "NULLSPACE"
@@ -751,7 +730,6 @@ define("sap_viz_ext_sankeyadvanced-src/js/render", ["sap_viz_ext_sankeyadvanced-
 			.on("click", function() {
 				color_option = 'input-output';
 				redraw(color_option);
-				this.setProperty('font-weight', 'bold');
 			});
 		menu.append('text').text('NODE-ORIENTED')
 			.style('cursor', 'pointer')
