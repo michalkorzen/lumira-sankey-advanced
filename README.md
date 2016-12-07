@@ -1,10 +1,10 @@
 Advanced Sankey Diagram - SAP Lumira visualization extension
 =================================================
-By [Michal Korzen](http://scn.sap.com/people/michal.korzen)
+Unlike any other SAP Lumira extensions, the presented advanced sankey chart enables to track the whole processes. 
 
  ![Sankey Diagram](images/overview.gif?raw=true "Advanced Sankey Diagram")
  
- * Based on [d3.js](https://d3js.org/) [sankey extension by Mike Bostock](https://bost.ocks.org/mike/sankey/)
+By [Michal Korzen](http://scn.sap.com/people/michal.korzen)
 
 Files
 -----------
@@ -19,3 +19,7 @@ Data Binding
 
 <strong>Dimensions (Nodes)</strong>
 * Combined pathflow (delimited with ">" [greater-than sign]) 
+
+Credits
+-------------------------------------------
+Based on [d3.js](https://d3js.org/) [sankey extension by Mike Bostock](https://bost.ocks.org/mike/sankey/)
