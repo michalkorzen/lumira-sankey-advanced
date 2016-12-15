@@ -23,7 +23,7 @@ Data Binding
 Limitations
 -------------------------------------------
 * Paths above 10 nodes are cut (only 10 first nodes are displayed)
-* Filtering works on array of paths contexts. Be aware that only visible paths may be filtered/excluded (tricky while using ranking)
+* Filtering works on array of paths contexts, thus be aware that only visible paths may be filtered/excluded (tricky while using ranking)
 
 Credits
 -------------------------------------------
