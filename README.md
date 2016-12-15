@@ -20,6 +20,10 @@ Data Binding
 <strong>Dimensions (Nodes)</strong>
 * Combined pathflow (delimited with ">" [greater-than sign]) 
 
+Limitations
+-------------------------------------------
+Filtering works on array of paths contexts. Be aware that only visible paths may be filtered/excluded (tricky while using ranking)
+
 Credits
 -------------------------------------------
-Based on [d3.js](https://d3js.org/) [sankey extension by Mike Bostock](https://bost.ocks.org/mike/sankey/)
+Vizualization based on [d3.js](https://d3js.org/) [sankey extension by Mike Bostock](https://bost.ocks.org/mike/sankey/)
