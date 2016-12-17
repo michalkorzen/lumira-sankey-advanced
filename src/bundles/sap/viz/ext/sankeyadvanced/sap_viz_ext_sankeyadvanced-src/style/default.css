@@ -17,4 +17,92 @@
     /*stroke-opacity: .5;*/
 }
 
-/* For example, adding the extension id as prefix of CSS class name. */
+#datafilter {
+	background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+.legend {
+    line-height: 18px;
+    color: #555;
+}
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+
+.v-tooltip-dimension-measure {
+	border-collapse: collapse; 
+}
+
+#datafilter>div {
+	margin-top:10px;
+}
+
+.v-body-dimension-label {
+	font-family:Arial;
+	font-size:12px;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	padding-bottom:8px;
+	color:#666666
+}
+
+.v-body-dimension-value {
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	padding-left:7px;
+	padding-bottom:8px;
+	color:#666666
+}
+
+.v-body-measure-label {
+	font-family:Arial;
+	font-size:12px;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	padding-bottom:0px;
+	color:#666666
+}
+
+.v-body-measure-value {
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	padding-left:7px;
+	padding-bottom:0px;
+	color:#000000
+}
+
+.v-separationline {
+	margin-top: 10px; 
+	border-bottom-width: 1px; 
+	border-bottom-style: solid; 
+	border-bottom-color: rgb(167, 169, 172);
+}
+
+.tooltipfooterlabel {
+	font-family:Arial;
+	font-size:12px;
+	font-weight:bold;
+	margin-top:8px;
+	color:#000000
+}
+
+.selectednode {
+	stroke: blue;
+	stroke-width: 2px;
+}
