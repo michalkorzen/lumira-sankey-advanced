@@ -386,17 +386,18 @@ define("sap_viz_ext_sankeyadvanced-src/js/render", ["sap_viz_ext_sankeyadvanced-
 				}
 
 				function ascendingTargetDepth(a, b) {
-					if (a.target.name === "NULLSPACE") {
-						return 1;
-					}
-					if (b.target.name === "NULLSPACE") {
-						return -1;
-					}
+					
 					if (a.target.y === b.target.y) {
 						if(b.processlength - a.processlength !== 0)
 							return b.processlength - a.processlength;
 						else
 							return b.value - a.value;
+					}
+					if (a.target.name === "NULLSPACE") {
+						return 1;
+					}
+					if (b.target.name === "NULLSPACE") {
+						return -1;
 					}
 					return a.target.y - b.target.y;
 				}
@@ -733,7 +734,9 @@ define("sap_viz_ext_sankeyadvanced-src/js/render", ["sap_viz_ext_sankeyadvanced-
 					options: {
 						position: pos
 					}
-				});				
+				});
+
+				$("#datafilter").addClass("sankeyadvanced_datafilter");
 				
 				$("#datafilter").prepend('<table class="v-tooltip-dimension-measure">'+
 					'<tr><td class="v-body-dimension-label">Node:</td><td class="v-body-dimension-value">'+name+'</td></tr>'+
@@ -742,7 +745,7 @@ define("sap_viz_ext_sankeyadvanced-src/js/render", ["sap_viz_ext_sankeyadvanced-
 				(Object.keys(selected_nodes).length > 1 ? '<div class="v-separationline"></div><div class="v-footer-label tooltipfooterlabel">'+Object.keys(selected_nodes).length+' nodes selected</div>' : ''));
 				
 				
-				var action_height = !actionmode ? 66 : -5;
+				var action_height = !actionmode ? 80 : 7;
 				var offset = $("#datafilter").offset();
 				
 				$( "#datafilter" ).offset({ 

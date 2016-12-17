@@ -3,10 +3,10 @@
 	"id": "sap.viz.ext.sankeyadvanced",
 	"name": "Sankey advanced",
 	"description": " ",
-	"version": "1.2.0",
+	"version": "1.3.0",
 	"vendor": {
 		"name": "Michal Korzen, SAP Poland",
-		"url": "Your company website"
+		"url": "http://www.sap.com"
 	},
 	"requires": [{
 		"id": "sap.viz.common.core",
@@ -14,6 +14,6 @@
 	}],
 	"bundles": [{
 		"id": "sap.viz.ext.sankeyadvanced",
-		"version": "1.2.0"
+		"version": "1.3.0"
 	}]
 }

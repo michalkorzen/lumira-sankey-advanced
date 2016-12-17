@@ -17,17 +17,21 @@
     /*stroke-opacity: .5;*/
 }
 
-#datafilter {
+.sankeyadvanced_datafilter {
 	background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     border-radius: 5px;
+	width: 180px !important;
+	height: auto !important;
+	padding: 10px;
 }
 
-.legend {
+
+.sankeyadvanced_datafilter .legend {
     line-height: 18px;
     color: #555;
 }
-.legend i {
+.sankeyadvanced_datafilter .legend i {
     width: 18px;
     height: 18px;
     float: left;
@@ -35,15 +39,15 @@
     opacity: 0.7;
 }
 
-.v-tooltip-dimension-measure {
+.sankeyadvanced_datafilter .v-tooltip-dimension-measure {
 	border-collapse: collapse; 
 }
 
-#datafilter>div {
+.sankeyadvanced_datafilter>div {
 	margin-top:10px;
 }
 
-.v-body-dimension-label {
+.sankeyadvanced_datafilter .v-body-dimension-label {
 	font-family:Arial;
 	font-size:12px;
 	white-space:nowrap;
@@ -53,7 +57,7 @@
 	color:#666666
 }
 
-.v-body-dimension-value {
+.sankeyadvanced_datafilter .v-body-dimension-value {
 	font-family:Arial;
 	font-size:13px;
 	font-weight:bold;
@@ -65,7 +69,7 @@
 	color:#666666
 }
 
-.v-body-measure-label {
+.sankeyadvanced_datafilter .v-body-measure-label {
 	font-family:Arial;
 	font-size:12px;
 	white-space:nowrap;
@@ -75,7 +79,7 @@
 	color:#666666
 }
 
-.v-body-measure-value {
+.sankeyadvanced_datafilter .v-body-measure-value {
 	font-family:Arial;
 	font-size:13px;
 	font-weight:bold;
@@ -87,14 +91,14 @@
 	color:#000000
 }
 
-.v-separationline {
+.sankeyadvanced_datafilter .v-separationline {
 	margin-top: 10px; 
 	border-bottom-width: 1px; 
 	border-bottom-style: solid; 
 	border-bottom-color: rgb(167, 169, 172);
 }
 
-.tooltipfooterlabel {
+.sankeyadvanced_datafilter .tooltipfooterlabel {
 	font-family:Arial;
 	font-size:12px;
 	font-weight:bold;
@@ -102,7 +106,7 @@
 	color:#000000
 }
 
-.selectednode {
+.sankeyadvanced_datafilter .selectednode {
 	stroke: blue;
 	stroke-width: 2px;
 }
