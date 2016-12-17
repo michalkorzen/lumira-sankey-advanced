@@ -33,7 +33,9 @@ define("sap_viz_ext_sankeyadvanced-src/js/flow", ["sap_viz_ext_sankeyadvanced-sr
 			"type": "Dimension",
 			"min": 1, //minimum number of data container
 			"max": 1, //maximum number of data container
-			"aaIndex": 1
+			"aaIndex": 1,
+		    "minStackedDims": 1,
+		    "maxStackedDims": 1
 		};
 		element.addFeed(ds1);
 
