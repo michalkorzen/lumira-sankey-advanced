@@ -597,7 +597,6 @@ define("sap_viz_ext_sankeyadvanced-src/js/render", ["sap_viz_ext_sankeyadvanced-
 			vis_g.selectAll('g').remove();
 			
 			function linktooltip(d) {
-				console.log(d);
 				//return;
 				//var step = parseInt(d.name.substring(0,d.name.indexOf("-")));
 				//var node = d.name.substring(d.name.indexOf("-") + 1);
@@ -612,8 +611,6 @@ define("sap_viz_ext_sankeyadvanced-src/js/render", ["sap_viz_ext_sankeyadvanced-
 	                x: (d.source.x + d.target.x)/2,//d3.event.x,
 	                y: (d.source.y + d.target.y)/2//d3.event.y
 	            };
-				console.log(d3);
-				console.log();
 				
 				module.setSelectedObjects(selectedContextArr);
 
@@ -681,7 +678,7 @@ define("sap_viz_ext_sankeyadvanced-src/js/render", ["sap_viz_ext_sankeyadvanced-
 				link.attr("d", path);
 			}
 			
-			window.selected_nodes = {};
+			var selected_nodes = {};
 			
 			function nodetooltip(d, node, actionmode) {
 				var step = parseInt(d.name.substring(0,d.name.indexOf("-")));
@@ -708,7 +705,6 @@ define("sap_viz_ext_sankeyadvanced-src/js/render", ["sap_viz_ext_sankeyadvanced-
 						}
 					}
 					selected_nodes[d.name] = selectedContextArr;
-					console.log(selected_nodes);
 					
 					var selectedContext = [];
 					for(var i = 0; i < Object.keys(selected_nodes).length; ++i) {
@@ -745,7 +741,7 @@ define("sap_viz_ext_sankeyadvanced-src/js/render", ["sap_viz_ext_sankeyadvanced-
 				(Object.keys(selected_nodes).length > 1 ? '<div class="v-separationline"></div><div class="v-footer-label tooltipfooterlabel">'+Object.keys(selected_nodes).length+' nodes selected</div>' : ''));
 				
 				
-				var action_height = !actionmode ? 80 : 7;
+				var action_height = !actionmode ? 70 : 7;
 				var offset = $("#datafilter").offset();
 				
 				$( "#datafilter" ).offset({ 
