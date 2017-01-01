@@ -16,7 +16,7 @@ define("sankeyadvanced-bundle", ["sap_viz_ext_sankeyadvanced-src/js/flow", "css!
 		};
 		var vizExtBundle = sap.bi.framework.declareBundle({
 			"id": "sap.viz.ext.sankeyadvanced",
-			"version": "1.3.0",
+			"version": "1.3.1",
 			"components": [{
 				"id": "sap.viz.ext.sankeyadvanced",
 				"provide": "sap.viz.impls",

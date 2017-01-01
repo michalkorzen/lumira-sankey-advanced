@@ -26,7 +26,7 @@ define("sap_viz_ext_sankeyadvanced-src/js/render", ["sap_viz_ext_sankeyadvanced-
 		//var svg = container.append('svg');
 		//svg.attr("width", width).attr("height", height);
 
-		var svg = container.append('svg').attr('width', window_width).attr('height', window_height);
+		var svg = container.append('svg').attr('width', window_width).attr('height', window_height).attr("class", "sap_viz_ext_sankeyadvanced");
 		//def gradient
 		var defs = svg.append("defs");
 
@@ -63,21 +63,21 @@ define("sap_viz_ext_sankeyadvanced-src/js/render", ["sap_viz_ext_sankeyadvanced-
 			.attr("stop-opacity", 0);
 
 		var vis = svg.append('g').attr('class', 'vis').attr('width', window_width).attr('height', window_height);
-		$(".sap_viz_ext_sankey.node rect").css({
+		$(".sap_viz_ext_sankeyadvanced.node rect").css({
 			cursor: 'move',
 			'fill-opacity': .9,
 			'shape-rendering': 'crispEdges'
 		});
-		$(".sap_viz_ext_sankey.node text").css({
+		$(".sap_viz_ext_sankeyadvanced.node text").css({
 			'pointer-events': 'none',
 			'text-shadow': '0 1px 0 #fff'
 		});
-		$(".sap_viz_ext_sankey.link").css({
+		$(".sap_viz_ext_sankeyadvanced.link").css({
 			fill: 'none',
 			stroke: '#000',
 			'stroke-opacity': .2
 		});
-		$(".sap_viz_ext_sankey.link:hover").css({
+		$(".sap_viz_ext_sankeyadvanced.link:hover").css({
 			'stroke-opacity': .5
 		});
 
@@ -628,7 +628,7 @@ define("sap_viz_ext_sankeyadvanced-src/js/render", ["sap_viz_ext_sankeyadvanced-
 			var link = vis_g.append("g").selectAll(".link")
 				.data(graph.links)
 				.enter().append("path")
-				.attr("class", "sap_viz_ext_sankey link")
+				.attr("class", "sap_viz_ext_sankeyadvanced link")
 				.attr("d", path)
 				.style("stroke-width", function(d) {
 					return Math.max(1, d.dy);
@@ -684,13 +684,10 @@ define("sap_viz_ext_sankeyadvanced-src/js/render", ["sap_viz_ext_sankeyadvanced-
 				var step = parseInt(d.name.substring(0,d.name.indexOf("-")));
 				var name = d.name.substring(d.name.indexOf("-") + 1);
 				
-				var mouse = d3.mouse(node);
 				var pos = {
-	                x: Math.max(d.x + mouse[0] - 50, 0),
-	                y: Math.max(d.y + mouse[1], 0)
+					x: Math.max(d.x - 50, 0),
+					y: Math.max(d.y, 0)
 	            };
-				$("#datafilter").data("x", mouse[0]);
-				$("#datafilter").data("y", mouse[1]);
 
 				if(actionmode && $.inArray(d.name, Object.keys(selected_nodes)) > -1) {
 					delete selected_nodes[d.name];
@@ -732,7 +729,9 @@ define("sap_viz_ext_sankeyadvanced-src/js/render", ["sap_viz_ext_sankeyadvanced-
 					}
 				});
 
-				$("#datafilter").addClass("sankeyadvanced_datafilter");
+				$("#datafilter").addClass("sap_viz_ext_sankeyadvanced_datafilter");
+				$("#datafilter")[0].style.setProperty('position', 'absolute', 'important');
+				$("#datafilter")[0].style.setProperty('width', '180px', 'important');
 				
 				$("#datafilter").prepend('<table class="v-tooltip-dimension-measure">'+
 					'<tr><td class="v-body-dimension-label">Node:</td><td class="v-body-dimension-value">'+name+'</td></tr>'+
@@ -741,7 +740,7 @@ define("sap_viz_ext_sankeyadvanced-src/js/render", ["sap_viz_ext_sankeyadvanced-
 				(Object.keys(selected_nodes).length > 1 ? '<div class="v-separationline"></div><div class="v-footer-label tooltipfooterlabel">'+Object.keys(selected_nodes).length+' nodes selected</div>' : ''));
 				
 				
-				var action_height = !actionmode ? 70 : 7;
+				var action_height = !actionmode ? 144-57 : 50+14-57;
 				var offset = $("#datafilter").offset();
 				
 				$( "#datafilter" ).offset({ 
@@ -763,12 +762,12 @@ define("sap_viz_ext_sankeyadvanced-src/js/render", ["sap_viz_ext_sankeyadvanced-
 				nodetooltip(d, node, false);
 			}
 			
-			window.svgg = vis_g;
+			//window.svgg = vis_g;
 			
 			var node = vis_g.append("g").selectAll(".node")
-				.data(graph.nodes)
+				.data( graph.nodes.filter(function(l) {return l.name != "NULLSPACE" && l.name != "CUTSPACE";}) )
 				.enter().append("g")
-				.attr("class", "sap_viz_ext_sankey node")
+				.attr("class", "sap_viz_ext_sankeyadvanced node")
 				.attr("transform", function(d) {
 					return "translate(" + d.x + "," + d.y + ")";
 				})
@@ -798,18 +797,6 @@ define("sap_viz_ext_sankeyadvanced-src/js/render", ["sap_viz_ext_sankeyadvanced-
 					vis_g.selectAll(".link").filter(function(l) {
 						return l.source === d || l.target === d;
 					}).transition().style('stroke-opacity', 0.7);
-				})
-				.on("mousemove", function(d) {
-					var mouse = d3.mouse(this);
-					var offset = $("#datafilter").offset();
-					$( "#datafilter" ).offset({ 
-						top: offset.top - ($("#datafilter").data("y") - mouse[1]),
-						left: offset.left - ($("#datafilter").data("x") - mouse[0]) 
-					});
-
-					$("#datafilter").data("x", mouse[0]);
-					$("#datafilter").data("y", mouse[1]);					
-					//nodehover(d, this);
 				})
  				.on("mouseout", function(d) {
 					//module.dispatch().hideDataFilter();

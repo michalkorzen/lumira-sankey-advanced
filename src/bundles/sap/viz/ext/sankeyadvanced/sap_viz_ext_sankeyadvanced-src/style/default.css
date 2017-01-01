@@ -1,23 +1,23 @@
 /* IMPORTANT:  use unique CSS class name to avoid confliction with other extensions or applications. */
-.sap_viz_ext_sankey.node rect {
+.sap_viz_ext_sankeyadvanced.node rect {
     cursor: move;
     fill-opacity: .9;
     shape-rendering: crispEdges;
 }
-.sap_viz_ext_sankey.node text {
+.sap_viz_ext_sankeyadvanced.node text {
     pointer-events: none;
     text-shadow: 0 1px 0 #fff;
 }
-.sap_viz_ext_sankey.link {
+.sap_viz_ext_sankeyadvanced.link {
     fill: none;
     stroke: #000;
     stroke-opacity: .2;
 }
-.sap_viz_ext_sankey.link:hover {
+.sap_viz_ext_sankeyadvanced.link:hover {
     /*stroke-opacity: .5;*/
 }
 
-.sankeyadvanced_datafilter {
+.sap_viz_ext_sankeyadvanced_datafilter {
 	background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     border-radius: 5px;
@@ -27,11 +27,11 @@
 }
 
 
-.sankeyadvanced_datafilter .legend {
+.sap_viz_ext_sankeyadvanced_datafilter .legend {
     line-height: 18px;
     color: #555;
 }
-.sankeyadvanced_datafilter .legend i {
+.sap_viz_ext_sankeyadvanced_datafilter .legend i {
     width: 18px;
     height: 18px;
     float: left;
@@ -39,15 +39,15 @@
     opacity: 0.7;
 }
 
-.sankeyadvanced_datafilter .v-tooltip-dimension-measure {
+.sap_viz_ext_sankeyadvanced_datafilter .v-tooltip-dimension-measure {
 	border-collapse: collapse; 
 }
 
-.sankeyadvanced_datafilter>div {
+.sap_viz_ext_sankeyadvanced_datafilter>div {
 	margin-top:10px;
 }
 
-.sankeyadvanced_datafilter .v-body-dimension-label {
+.sap_viz_ext_sankeyadvanced_datafilter .v-body-dimension-label {
 	font-family:Arial;
 	font-size:12px;
 	white-space:nowrap;
@@ -57,7 +57,7 @@
 	color:#666666
 }
 
-.sankeyadvanced_datafilter .v-body-dimension-value {
+.sap_viz_ext_sankeyadvanced_datafilter .v-body-dimension-value {
 	font-family:Arial;
 	font-size:13px;
 	font-weight:bold;
@@ -69,7 +69,7 @@
 	color:#666666
 }
 
-.sankeyadvanced_datafilter .v-body-measure-label {
+.sap_viz_ext_sankeyadvanced_datafilter .v-body-measure-label {
 	font-family:Arial;
 	font-size:12px;
 	white-space:nowrap;
@@ -79,7 +79,7 @@
 	color:#666666
 }
 
-.sankeyadvanced_datafilter .v-body-measure-value {
+.sap_viz_ext_sankeyadvanced_datafilter .v-body-measure-value {
 	font-family:Arial;
 	font-size:13px;
 	font-weight:bold;
@@ -91,14 +91,14 @@
 	color:#000000
 }
 
-.sankeyadvanced_datafilter .v-separationline {
+.sap_viz_ext_sankeyadvanced_datafilter .v-separationline {
 	margin-top: 10px; 
 	border-bottom-width: 1px; 
 	border-bottom-style: solid; 
 	border-bottom-color: rgb(167, 169, 172);
 }
 
-.sankeyadvanced_datafilter .tooltipfooterlabel {
+.sap_viz_ext_sankeyadvanced_datafilter .tooltipfooterlabel {
 	font-family:Arial;
 	font-size:12px;
 	font-weight:bold;
@@ -106,7 +106,7 @@
 	color:#000000
 }
 
-.sankeyadvanced_datafilter .selectednode {
+.sap_viz_ext_sankeyadvanced_datafilter .selectednode {
 	stroke: blue;
 	stroke-width: 2px;
 }
